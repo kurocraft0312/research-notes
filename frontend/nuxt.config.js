@@ -23,6 +23,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '~/assets/css/normalize.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -40,7 +41,11 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/axios',
   ],
+  axios: {
+
+  },
   /*
   ** Build configuration
   */
@@ -49,6 +54,33 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+      module: {
+        rules: [
+          /*SCSS*/
+          {
+            test: /\.scss$/,
+            loader: 'style-loader!css-loader!sass-loader'
+          },
+          /*pug*/
+          {
+            test: /\.pug$/,
+            oneOf: [
+              {
+                resourceQuery: /^\?vue/,
+                use: ['pug-plain-loader']
+              },
+              {
+                use: ['raw-loader', {
+                  loader: 'pug-plain-loader',
+                  options: {
+                    'pretty':false,
+                  }
+                }]
+              }
+            ]
+          },
+        ]
+      }
     }
   }
 }
