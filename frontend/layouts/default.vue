@@ -1,6 +1,6 @@
 <template lang="pug">
-  div(class="a")
-    //- header
+  //- header
+  div(class="head-menu")
     nav(class="flex items-center justify-between flex-wrap bg-teal-500 p-6")
       div(class="flex items-center flex-shrink-0 text-white mr-6")
         svg(class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg")
@@ -19,14 +19,15 @@
         //- div(v-for="menu in menus" :key="menu.key" class="text-sm lg:flex-grow")
         //-   a(:href="menu.url")
     //- contents
-    div(class="flex content-center flex-wrap")
-      div(v-for="article in articles" :key="article.key" class="w-1/3 p-4 max-w-sm rounded overflow-hidden shadow-lg")
-        img(class="w-full" :src="article.eyecatch" alt="テスト")
-        div(class="px-6 py-4")
-          div(class="font-bold text-xl mb-2") {{article.title}}
-          p(class="text-gray-700 text-base") {{article.description}}
-        div(class="px-6 py-4")
-          span(class="date") {{article.date}}
+    div(class="container mx-auto px-4")
+      div(class="flex content-center flex-wrap")
+        div(v-for="article in articles" :key="article.key" class="w-1/3 p-4 max-w-sm rounded overflow-hidden shadow-lg")
+          img(class="w-full" :src="article.eyecatch" alt="テスト")
+          div(class="px-6 py-4")
+            div(class="font-bold text-xl mb-2") {{article.title}}
+            p(class="text-gray-700 text-base") {{article.description}}
+          div(class="px-6 py-4")
+            span(class="date") {{article.date}}
     //- sidebar
     div(class="flex content-center flex-wrap")
 
