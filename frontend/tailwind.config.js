@@ -6,7 +6,7 @@
 */
 module.exports = {
   theme: {
-    // https://tailwindcss.com/docs/containers
+    // https://tailwindcss.com/docs/container
     container: {
       center: true,
       padding: '2rem',
