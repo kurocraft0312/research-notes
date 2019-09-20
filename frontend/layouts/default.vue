@@ -12,7 +12,7 @@
             title Menu
             path(d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z")
       div(class="w-full block flex-grow lg:menu-bar lg:items-center lg:w-auto")
-        div(v-for="menu in menus" :key="menu.key" class="text-sm")
+        div(class="text-sm" v-for="menu in menus" :key="menu.key")
           a(:href="menu.url" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4") {{menu.title}}
     //- contents
     div(class="container mx-auto px-4")
@@ -42,6 +42,7 @@
 export default {
   data() {
     return {
+      isMenuActive: false,
       menus: [
         {
           title:'HOME',
@@ -148,6 +149,11 @@ export default {
           // url: '/',
         },
       ]
+    }
+  },
+  methods: {
+    toggleMenu () {
+      this.isMenuActive = !this.isMenuActive
     }
   }
 }
