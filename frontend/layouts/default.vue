@@ -17,7 +17,7 @@
     //- contents
     div(class="container mx-auto px-4")
       div(class="flex content-center flex-wrap")
-        div(v-for="article in articles" :key="article.key" class="w-1/3 p-4 max-w-sm rounded overflow-hidden shadow-lg")
+        div(v-for="article in articles" :key="article.key" class="lg:w-1/3 md:w-1/2 p-4 rounded overflow-hidden shadow-lg")
           img(class="w-full" :src="article.eyecatch" alt="テスト")
           div(class="px-6 py-4")
             div(class="font-bold text-xl mb-2") {{article.title}}
